@@ -1,0 +1,83 @@
+:root {
+  --clr-primary-cyan: hsl(193, 38%, 86%);
+  --clr-primary-green: hsl(150, 100%, 66%);
+
+  --clr-neutral-gray-blue-600: hsl(217, 19%, 38%);
+  --clr-neutral-gray-blue-900: hsl(217, 19%, 24%);
+  --clr-neutral-dark-blue: hsl(218, 23%, 16%);
+
+  --bp-desktop: 1440px;
+  --bp-mobile: 375px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--clr-neutral-dark-blue);
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: var(--clr-neutral-gray-blue-900);
+  color: var(--clr-primary-cyan);
+  /* max-width: 480px; */
+  height: 333px;
+  min-width: 540px;
+  width: 33vw;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 30px;
+  position: relative;
+}
+
+.random {
+  height: 64px;
+  aspect-ratio: 1 / 1;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--clr-primary-green);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
+  cursor: pointer;
+  box-shadow: 0 0 0 0 hsl(150, 100%, 66%);
+  transition: all .2s ease-in-out;
+}
+
+.random::after {
+  content: '';
+  background-image: url('/images/icon-dice.svg');
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.random:hover {
+  box-shadow: 0 0 35px 2px hsl(150, 100%, 66%);
+}
+
+.random:disabled {
+  opacity: .8;
+  box-shadow: 0 0 0 0 hsl(150, 100%, 66%);
+}
+
+.number {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 53px;
+  color: var(--clr-primary-green);
+}
+
+.advice {
+  font-size: 20px;
+}
